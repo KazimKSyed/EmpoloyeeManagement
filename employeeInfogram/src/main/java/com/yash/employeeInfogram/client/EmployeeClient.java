@@ -1,37 +1,24 @@
 package com.yash.employeeInfogram.client;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Scanner;
 
 import com.yash.employeeInfogram.service.EmployeeService;
 
 public class EmployeeClient {
 	static Scanner sc = new Scanner(System.in);
-	static EmployeeService service = () -> {
-		try {
-			return EmployeeService.getEmployees();
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
-	};
 
 	public static void main(String[] args) {
+		EmployeeService service = () -> {
+			try {
+				return EmployeeService.getEmployees();
+			} catch (ParseException e2) {
+
+				e2.printStackTrace();
+			}
+			return null;
+		};
 		
-		String pattern = "yyyy-MM-dd";
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-
-		try {
-			Date date = simpleDateFormat.parse("2018-09-09");
-			System.out.println(date);
-		} catch (ParseException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-
 		System.out.println("============================= Choose Options =================================");
 
 		while (true) {
