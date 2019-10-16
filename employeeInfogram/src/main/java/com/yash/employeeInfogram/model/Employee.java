@@ -1,5 +1,6 @@
 package com.yash.employeeInfogram.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Employee {
@@ -10,7 +11,7 @@ public class Employee {
 	private String mobile;
 	private double salary;
 	
-	private Date joiningDate;
+	private LocalDate joiningDate;
 	private String role;
 	private String password;
 	public int getId() {
@@ -43,10 +44,10 @@ public class Employee {
 	public void setSalary(double salary) {
 		this.salary = salary;
 	}
-	public Date getJoiningDate() {
+	public LocalDate getJoiningDate() {
 		return joiningDate;
 	}
-	public void setJoiningDate(Date joiningDate) {
+	public void setJoiningDate(LocalDate joiningDate) {
 		this.joiningDate = joiningDate;
 	}
 	public String getRole() {
@@ -70,7 +71,7 @@ public class Employee {
 		return "\nEmployee [id=" + id + ", name=" + name + ", email=" + email + ", mobile=" + mobile + ", salary="
 				+ salary + ", joiningDate=" + joiningDate + ", role=" + role + ", password=" + password + "]";
 	}
-	public Employee(int id, String name, String email, String mobile, double salary, Date joiningDate, String role,
+	public Employee(int id, String name, String email, String mobile, double salary, LocalDate joiningDate, String role,
 			String password) {
 		super();
 		this.id = id;

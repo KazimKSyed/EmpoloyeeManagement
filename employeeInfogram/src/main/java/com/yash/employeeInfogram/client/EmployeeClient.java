@@ -1,9 +1,19 @@
 package com.yash.employeeInfogram.client;
 
 import java.text.ParseException;
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.temporal.ChronoUnit;
+import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
+import java.util.function.Predicate;
 
+import com.yash.employeeInfogram.model.Employee;
 import com.yash.employeeInfogram.service.EmployeeService;
+import com.yash.employeeInfogram.service.NewJoinersInterface;
+import com.yash.employeeInfogram.serviceImpl.EmployeeServiceImpl;
+import com.yash.employeeInfogram.serviceImpl.NewJoinersImpl;
 
 public class EmployeeClient {
 	static Scanner sc = new Scanner(System.in);
@@ -18,7 +28,20 @@ public class EmployeeClient {
 			}
 			return null;
 		};
-		
+		/*
+		 * LocalDate dateBefore = LocalDate.of(2017,Month.DECEMBER, 24); //29-July-2017,
+		 * change this to your desired End Date LocalDate dateAfter =LocalDate.now();
+		 * System.out.println(dateAfter.getDayOfMonth()); long noOfDaysBetween =
+		 * ChronoUnit.DAYS.between(dateBefore, dateAfter);
+		 * System.out.println(noOfDaysBetween);
+		 */
+		/*
+		 * List<Employee> empl=service.getAllEmployees(); for (Employee employee : empl)
+		 * { if(employee.getName().equalsIgnoreCase("kazim")) {
+		 * ChronoUnit.DAYS.between(employee.getJoiningDate(),new Date());
+		 * 
+		 * } }
+		 */
 		System.out.println("============================= Choose Options =================================");
 
 		while (true) {
@@ -55,6 +78,17 @@ public class EmployeeClient {
 					break;
 				}
 
+				break;
+			case 4:
+
+				List<Employee> list=service.getAllEmployees();
+				for (Employee employee : list) {
+					NewJoinersInterface predicate=NewJoinersImpl::getEmp;
+					boolean result=predicate.test(employee.getJoiningDate());
+					
+					if(result==true) System.out.println(employee);
+				}
+				//service.getAllEmployees().stream().filter(NewJoinersImpl::getEmp)
 				break;
 			default:
 				break;
