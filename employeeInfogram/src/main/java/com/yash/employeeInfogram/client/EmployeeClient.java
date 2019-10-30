@@ -16,7 +16,7 @@ public class EmployeeClient {
 	
 
 		while (true) {
-			System.out.println("================================ Choose Options ====================================");
+			System.out.println("\n================================ Choose Options ====================================");
 			System.out.println("\n 1. Get Employee by Id\n " + "2. Get All Employees\n "
 					+ "3. Get Employee by Name\n" + " 4. Get Employee By Salary\n " + "5. Get new joiners\n 6. Get Employee by Role");
 			int i = sc.nextInt();
@@ -28,8 +28,8 @@ public class EmployeeClient {
 
 				break;
 			case 2:
-				EmployeeSupplier.supplier.get();
-				service.getAllEmployees().forEach(System.out::println);
+				
+				service.getAllEmployees();
 
 				break;
 			case 3:
@@ -40,12 +40,10 @@ public class EmployeeClient {
 				break;
 			case 4:
 				service.getEmployeeBySalary();
-
 				break;
 			case 5:
-
+				service.getNewJoinersByUsingFunction().forEach(System.out::println);;
 				
-				service.getNewJoinersByUsingFunction();
 				break;
 			case 6:
 

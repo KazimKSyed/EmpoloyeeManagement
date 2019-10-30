@@ -5,15 +5,16 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import com.yash.employeeInfogram.model.Employee;
 
 public interface EmpServices {
-	public List<Employee> getAllEmployees();
+	public void getAllEmployees();
 
 	public Employee getEmployeeById(int id) throws ParseException;
 
-	public Employee getEmployeeByName(String name) throws ParseException;
+	public void getEmployeeByName(String name) throws ParseException;
 
 	public List<Employee> getEmployeeBySalary() throws ParseException;
 

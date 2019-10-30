@@ -13,7 +13,7 @@ public class Employee {
 	
 	private LocalDate joiningDate;
 	private String role;
-	private String password;
+	
 	public int getId() {
 		return id;
 	}
@@ -56,12 +56,7 @@ public class Employee {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
+	
 	public Employee() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -69,10 +64,9 @@ public class Employee {
 	@Override
 	public String toString() {
 		return "\nEmployee [id=" + id + ", name=" + name + ", email=" + email + ", mobile=" + mobile + ", salary="
-				+ salary + ", joiningDate=" + joiningDate + ", role=" + role + ", password=" + password + "]";
+				+ salary + ", joiningDate=" + joiningDate + ", role=" + role + "]";
 	}
-	public Employee(int id, String name, String email, String mobile, double salary, LocalDate joiningDate, String role,
-			String password) {
+	public Employee(int id, String name, String email, String mobile, double salary, LocalDate joiningDate, String role) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -81,7 +75,7 @@ public class Employee {
 		this.salary = salary;
 		this.joiningDate = joiningDate;
 		this.role = role;
-		this.password = password;
+		
 	}
 	
 	
