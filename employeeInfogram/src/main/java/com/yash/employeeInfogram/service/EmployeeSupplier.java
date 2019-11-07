@@ -2,7 +2,7 @@ package com.yash.employeeInfogram.service;
 
 import java.time.LocalDate;
 import java.time.Month;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
@@ -21,7 +21,13 @@ public interface EmployeeSupplier {
 				LocalDate.of(2019, Month.OCTOBER, 20), "consumer");
 		Employee e5 = new Employee(05, "Rahul", "Rahul@gmail.com", "66666666666", 85000,
 				LocalDate.of(2019, Month.JANUARY, 17), "consumer");
-		List<Employee> list = Arrays.asList(e1, e2, e3, e4, e5);
+		List<Employee> list = new ArrayList<Employee>();
+		list.add(e1);
+		list.add(e2);
+		list.add(e3);
+		list.add(e4);
+		list.add(e5);
+
 		return list;
 
 	};

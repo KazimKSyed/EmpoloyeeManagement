@@ -1,16 +1,20 @@
 package com.yash.employeeInfogram.model;
 
 import java.time.LocalDate;
-import java.util.Date;
 
-public class Employee {
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+
+
+@Entity
+public class Employee  {
+	@Id
 	private int id;
 	private String name;
 	private String email;
 	private String mobile;
 	private double salary;
-	
 	private LocalDate joiningDate;
 	private String role;
 	
